@@ -1,3 +1,17 @@
+document.addEventListener('keydown', function(event) {
+
+    meuCenario.move(event.keyCode);
+
+});
+->this.ctx.drawImage(this.imagem, 
+    this.etapaPasso*TAMANHO_CELULA, this.direcaoImagem*ALTURA_PERSONAGEM, 
+    TAMANHO_CELULA, ALTURA_PERSONAGEM, 
+    this.x, this.y+10,
+    TAMANHO_CELULA,ALTURA_PERSONAGEM);
+
+void ctx.drawImage(image, dx, dy);
+void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+
 this.semiPasso = function()
   {
     var posicaoInterna_Celula = ((this.etapaPasso%4)+1)/4 * TAMANHO_CELULA;
