@@ -1,0 +1,21 @@
+this.semiPasso = function()
+  {
+    var posicaoInterna_Celula = ((this.etapaPasso%4)+1)/4 * TAMANHO_CELULA;
+    switch (this.iniciouDirecao)
+    {
+      case NORTE: this.y = this.oldy - posicaoInterna_Celula;
+                  this.direcaoImagem = IMAGEM_COSTAS; break;
+      case SUL:   this.y = this.oldy + posicaoInterna_Celula;
+                  this.direcaoImagem = IMAGEM_FRENTE; break;
+      case LESTE: this.x = this.oldx + posicaoInterna_Celula;
+                  this.direcaoImagem = IMAGEM_DIREITA; break;
+      case OESTE: this.x = this.oldx - posicaoInterna_Celula;
+                  this.direcaoImagem = IMAGEM_ESQUERDA; break;
+      default:break;
+    }
+    this.etapaPasso = (this.etapaPasso+1) % 4;
+    if (this.etapaPasso == 0 )
+    {
+      this.iniciouPasso = false;
+    }
+  }
